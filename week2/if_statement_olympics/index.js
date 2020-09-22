@@ -1,21 +1,10 @@
 if(5 > 3) {
     console.log("Is greater than")
 }
-
-
-
-function catLength(a)   {
-    let result;
-    if (a === 3) {
-        result = "is the length";
+var str  = "cat" 
+    if("cat".length === 3){
+    console.log("is the length")
     }
-        else {
-            result = "is not the length";
-        }
-        return result;
-}
-console.log(catLength(3));
-
 
 if("cat" === "dog") {
     console.log("The Same")
@@ -23,44 +12,28 @@ if("cat" === "dog") {
         console.log("not the same")
 }
 
-
-function age(a) {
-    let result;
-    if (a > 18) {
-        result = "is allowed to go into movie.";
-}   
-    else {
-        result = "is not allowed to go into movie."
+var person = {
+    name: "Bobby",
+    age: 12
 }
-    return result;
+
+if(person.age >= 18) {
+    console.log("Allowed into movie")
+}   else {
+    console.log("Not allowed into movie")
 }
-console.log(age(12));
 
-function name(a) {
-    let result;
-    if (a === "name starts with b") {
-        result = "is allowed into movie";
-    }
-    else {
-        result = "is not allowed into movie"
-    }
-    return result;
+if(person.name.startsWith("B") ) {
+    console.log("Is allowed into movie")
+}   else {
+    console.log("is not allowed into movie")
 }
-console.log(name("name starts with b"))
 
-
-
-function nameAge(a, b) {
-    let result;
-    if (a > 18 && "name starts with b" === b) {
-        result = "is allowed into movie"
-    }
-        else {
-            result = "is not allowed into movie"
-        }
-        return result;
+if(person.age >= 18 && person.name.startsWith("B")) {
+    console.log("Is allowed into movie")
+}   else {
+    console.log("Is not allowed into movie")
 }
-console.log(nameAge(12, "name starts with b"))
 
 
 if ("1" === 1) {
@@ -81,8 +54,7 @@ else {
     console.log("no")
 }
 
-
-if ("dog" === "") {
+if ("typeOfDog" === "string") {
     console.log("dog is equal to string")
 }
 else {
@@ -90,7 +62,7 @@ else {
 }
 
 
-if (true) {
+if (typeof true === "boolean") {
     console.log("is a boolean")
 }
 else {
