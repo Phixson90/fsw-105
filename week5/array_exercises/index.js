@@ -20,9 +20,9 @@ console.log(fiveAndGreaterOnly2([3, 6, 8, 2]));
 
 // //2
 
-const numbers = [3, 6, 8, 2]
+const numbers1 = [3, 6, 8, 2]
 
-const evensOnly = numbers.filter(num => num % 2 === 0)
+const evensOnly = numbers1.filter(num => num % 2 === 0)
 console.log(evensOnly)
 
 // //3 extra credit
