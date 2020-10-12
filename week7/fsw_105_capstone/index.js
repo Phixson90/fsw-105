@@ -1,19 +1,19 @@
 const readlineSync = require('readline-sync');
 
 const name = readlineSync.question("Please state your name...");
-readlineSync.question(name + "! Welcome to the most dagerous game! May you enter with courage and leave with your life! Press enter to begin.");
+readlineSync.question(name + "! Welcome to the most dangerous game! May you enter with courage and leave with your life! Press enter to begin.");
 
-const enemies = ["Covid-19 Monster", "Unmasked Covid Patient", "Evil SARS Baby", "Antifa Protester"];
+const enemies = ["Covid-19 Monster", "Unmasked Covid Patient", "Evil SARS Baby", "Protester"];
 const items = ["Masks", "Covid-19 Vaccine", "Ventilator", "Hydroxychloroquine"];
 var prize = [];
-let playerHealth = 40;
+let playerHealth = 25;
 const options = ["Walk", "Exit", "Print"];
 let pickUp = items[Math.floor(Math.random() * items.length)];
 
 function game(){
     const attackPower = Math.floor(Math.random() * (10 -7 + 1) + 2);
     const enemy = enemies[Math.floor(Math.random() * enemies.length)];
-    let enemiesHealth = 40;
+    let enemiesHealth = 25;
     const enemiesPower = Math.floor(Math.random() * (10 -7 + 1) + 2);
 
     const index = readlineSync.keyInSelect(options, "What would you like to do next?");
@@ -21,7 +21,7 @@ function game(){
     if(options[index] == "Exit") {
         return playerHealth = 0;
     } else if (options[index] == "print"){
-        console.log(name + ': \n' + playerHealth + '\nItems: ' + pickup);
+        console.log(name + ': \n' + playerHealth + '\nItems: ' + pickUp);
     } else if (options[index] == "Walk"){
         let key = Math.random();
         if (key <= .3) {
@@ -41,18 +41,18 @@ function game(){
                         }
                         case 'a':
                             enemiesHealth -+ attackPower;
-                            console.log ("You attacked " + enemy + "with " + attackPower + " attack power" );
+                            console.log ("You attacked " + enemy + " with " + attackPower + " attack power" );
 
                             playerHealth -= enemiesPower;
-                            console.log("Enemy just attacked you with: " + enemiesPower + " attack power");
+                            console.log(`${enemy} attacked you with: ${enemiesPower} attack power`);
 
                             if(enemiesHealth <= 0){
-                                console.log("You slayed " + enemy + '.\n' + enemy + " left: " + pickUp);
+                                console.log(`You slayed ${enemy}!${enemy} left: ${pickUp}`);
                                 let loot = Math.rondom();
                                 if (loot <= .3){
                                     prize.push(pickup);
                                 }else if(playerHealth <= 0){
-                                    console.log("You have been slayed by the " + enemy + ". You are Dead. GAME OVER.")
+                                    console.log(`You have been slayed by the ${enemy}. You are Dead. GAME OVER.`)
                                 }
 
                             }
